@@ -1,28 +1,28 @@
 {
-  "name": "injective-challenge",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "ts-node src/index.ts",
-    "test": "mocha"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^24.0.14",
-    "mocha": "^11.7.1",
-    "ts-mockito": "^2.6.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "@injectivelabs/sdk-ts": "^1.15.43",
-    "bech32": "^2.0.0",
-    "bip39": "^3.1.0"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  }
+    "name": "injective-challenge",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "test": "mocha"
+    },
+    "author": "Alejandro Busse",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "^24.0.14",
+        "mocha": "^11.7.1",
+        "ts-mockito": "^2.6.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "@injectivelabs/sdk-ts": "^1.15.43",
+        "bech32": "^2.0.0",
+        "bip39": "^3.1.0"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    }
 }

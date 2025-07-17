@@ -1,11 +1,8 @@
-
 import * as bip39 from 'bip39'
 import { bech32 } from 'bech32'
 import { BECH32_ADDR_ACC_PREFIX } from '@injectivelabs/sdk-ts'
 
 export class Utils {
-
-
     /**
      * Validates a mnemonic phrase.
      * @param {string} mnemonic - The mnemonic phrase to validate.
@@ -45,5 +42,4 @@ export class Utils {
             return false
         }
     }
-
 }

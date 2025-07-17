@@ -12,7 +12,10 @@ describe('InjectiveClient', () => {
             const expecteBalance = '1234'
 
             const mockBankApi = mock<ChainRestBankApi>()
-            when(mockBankApi.fetchBalance(fakeWallet.address, 'inj')).thenResolve({ amount: expecteBalance, denom: 'inj' })
+            when(mockBankApi.fetchBalance(fakeWallet.address, 'inj')).thenResolve({
+                amount: expecteBalance,
+                denom: 'inj',
+            })
 
             const client = new InjectiveClient({
                 wallet: fakeWallet,
@@ -43,7 +46,9 @@ describe('InjectiveClient', () => {
             const denomination = 'inj'
 
             const mockBroadcaster = mock<MsgBroadcasterWithPk>()
-            when(mockBroadcaster.broadcast(anything())).thenResolve({ txHash: 'FAKE_TX_HASH_ABC123' } as TxResponse)
+            when(mockBroadcaster.broadcast(anything())).thenResolve({
+                txHash: 'FAKE_TX_HASH_ABC123',
+            } as TxResponse)
 
             const client = new InjectiveClient({
                 wallet: fakeWallet,
@@ -55,13 +60,13 @@ describe('InjectiveClient', () => {
             assert.equal(txHash, 'FAKE_TX_HASH_ABC123')
 
             // Verify that the broadcaster was called with the correct message
-            const [input] = capture(mockBroadcaster.broadcast).last();
-            const firstMsg = Array.isArray(input.msgs) ? input.msgs[0] : input.msgs;
-            assert.ok(firstMsg instanceof MsgSend, 'Expected MsgSend message to be sent');
-            const sendMsgData = JSON.parse(firstMsg.toJSON());
-            assert.equal(sendMsgData.fromAddress, fakeWallet.address);
-            assert.equal(sendMsgData.toAddress, receiverAddress);
-            assert.deepEqual(sendMsgData.amount, [{ denom: denomination, amount: amountToSend }]);
+            const [input] = capture(mockBroadcaster.broadcast).last()
+            const firstMsg = Array.isArray(input.msgs) ? input.msgs[0] : input.msgs
+            assert.ok(firstMsg instanceof MsgSend, 'Expected MsgSend message to be sent')
+            const sendMsgData = JSON.parse(firstMsg.toJSON())
+            assert.equal(sendMsgData.fromAddress, fakeWallet.address)
+            assert.equal(sendMsgData.toAddress, receiverAddress)
+            assert.deepEqual(sendMsgData.amount, [{ denom: denomination, amount: amountToSend }])
         })
 
         it('throws error for invalid recipient address', async () => {

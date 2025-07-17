@@ -34,22 +34,22 @@ describe('Utils', () => {
 
     describe('isValidAmount', () => {
         it('should return true for a valid positive integer amount', () => {
-            assert.strictEqual(Utils.isValidAmount("1"), true)
-            assert.strictEqual(Utils.isValidAmount("123456789012345678901234567890"), true)
-            assert.strictEqual(Utils.isValidAmount("   42   "), true)
+            assert.strictEqual(Utils.isValidAmount('1'), true)
+            assert.strictEqual(Utils.isValidAmount('123456789012345678901234567890'), true)
+            assert.strictEqual(Utils.isValidAmount('   42   '), true)
         })
 
         it('should return false for a negative amount', () => {
-            assert.strictEqual(Utils.isValidAmount("0"), false)
-            assert.strictEqual(Utils.isValidAmount("-5"), false)
-            assert.strictEqual(Utils.isValidAmount("3.14"), false)     // BigInt doesn't support decimals
-            assert.strictEqual(Utils.isValidAmount("abc"), false)
-            assert.strictEqual(Utils.isValidAmount("123abc"), false)
-            assert.strictEqual(Utils.isValidAmount(""), false)
-            assert.strictEqual(Utils.isValidAmount(" "), false)
-            assert.strictEqual(Utils.isValidAmount("1.0"), false)
-            assert.strictEqual(Utils.isValidAmount("NaN"), false)
-            assert.strictEqual(Utils.isValidAmount("Infinity"), false)
+            assert.strictEqual(Utils.isValidAmount('0'), false)
+            assert.strictEqual(Utils.isValidAmount('-5'), false)
+            assert.strictEqual(Utils.isValidAmount('3.14'), false) // BigInt doesn't support decimals
+            assert.strictEqual(Utils.isValidAmount('abc'), false)
+            assert.strictEqual(Utils.isValidAmount('123abc'), false)
+            assert.strictEqual(Utils.isValidAmount(''), false)
+            assert.strictEqual(Utils.isValidAmount(' '), false)
+            assert.strictEqual(Utils.isValidAmount('1.0'), false)
+            assert.strictEqual(Utils.isValidAmount('NaN'), false)
+            assert.strictEqual(Utils.isValidAmount('Infinity'), false)
         })
     })
 })

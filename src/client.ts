@@ -1,11 +1,7 @@
-import {
-    ChainRestBankApi,
-    MsgBroadcasterWithPk,
-    MsgSend,
-} from '@injectivelabs/sdk-ts'
-import { getNetworkEndpoints, Network } from "@injectivelabs/networks";
-import { InjectiveWallet } from './wallet';
-import { Utils } from './utils';
+import { ChainRestBankApi, MsgBroadcasterWithPk, MsgSend } from '@injectivelabs/sdk-ts'
+import { getNetworkEndpoints, Network } from '@injectivelabs/networks'
+import { InjectiveWallet } from './wallet'
+import { Utils } from './utils'
 
 export type InjectiveClientOptions = {
     network?: Network
@@ -32,7 +28,12 @@ export class InjectiveClient {
         this.network = options.network || Network.Testnet
         this.wallet = options.wallet
         this.bankApi = options.bankApi || new ChainRestBankApi(getNetworkEndpoints(Network.Testnet).rest)
-        this.broadcaster = options.broadcaster || new MsgBroadcasterWithPk({ network: this.network, privateKey: this.wallet.privateKey })
+        this.broadcaster =
+            options.broadcaster ||
+            new MsgBroadcasterWithPk({
+                network: this.network,
+                privateKey: this.wallet.privateKey,
+            })
     }
 
     /**
