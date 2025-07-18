@@ -7,7 +7,7 @@
 1. Clone the repository (if you haven't already):
 
     ```bash
-    git clone https://github.com/alebusse/injective-challenge
+    git clone https://github.com/alebusse/injective-challenge.git
     cd injective-challenge
     ```
 
