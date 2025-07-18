@@ -7,8 +7,8 @@
 1. Clone the repository (if you haven't already):
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/alebusse/injective-challenge
+    cd injective-challenge
     ```
 
 2. Install dependencies
